@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="commons/header :: header" >
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="../../static/css/bootstrap.css" />
+  <script th:src="@{/js/bootstrap.js}" src="../../static/js/bootstrap.js"></script>
+  <script th:src="@{/js/jquery-3.6.1.min.js}" src="../../static/js/jquery-3.6.1.min.js"></script>
+  <title>clienets@</title>
+</head>
+
+<body>
+  <div th:replace="commons/menu :: menu" />
+  <div class="container">
+    <main>
+      <div class="row g-5">
+        <div class="col-8">
+          <h4 class="mb-3">Datos profesor</h4>
+          <form class="needs-validation"  method="post" th:action="@{/profesores/update}"  novalidate>
+            <input type="hidden" name="id" th:value="${profesor.id}">
+
+            <div class="row g-4">
+              <div class="col-sm-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" th:value="${profesor.nombre}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="NIF" class="form-label">NIF</label>
+                <input type="text" class="form-control" id="NIF" name="NIF" placeholder="" th:value="${profesor.NIF}" value="" required>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="apellido1" class="form-label">Primer apellido</label>
+                <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="" th:value="${profesor.apellido1}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="apellido2" class="form-label">Segundo apellido</label>
+                <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="" th:value="${profesor.apellido2}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="descripcion" class="form-label">email</label>
+                <input type="text" class="form-control" id="email" name="email" placeholder="" th:value="${profesor.email}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="" th:value="${profesor.direccion}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="codigoPostal" class="form-label">Código postal</label>
+                <input type="text" class="form-control" id="codigoPostal" name="codigoPostal" placeholder="" th:value="${profesor.codigoPostal}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="municipio" class="form-label">Municipio</label>
+                <input type="text" class="form-control" id="municipio" name="municipio" placeholder="" th:value="${profesor.municipio}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="provincia" class="form-label">Provincia</label>
+                <input type="text" class="form-control" id="provincia" name="provincia" placeholder="" th:value="${profesor.provincia}" value="" required>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="categoria" class="form-label">Categoría</label>
+                <input type="text" class="form-control" id="categoria" name="categoria" placeholder="" th:value="${profesor.categoria}" value="" required>
+              </div>
+            </div>
+  
+            <hr class="my-4">
+  
+            <div class="col-sm-12">
+              <div class="btn-group">
+                <a class="btn btn-primary" th:href="@{/profesores/list}" href="#" role="button">Cancelar</a>
+                <button class="btn btn-primary" type="submit">Crear</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
